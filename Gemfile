@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk', '~> 1.60.2' 
 gem 'paperclip', '~> 4.2.1'
 gem 'carrierwave'
 gem 'fog', '~> 1.27.0'
