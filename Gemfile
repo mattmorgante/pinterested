@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
+gem 'masonry-rails', '~>0.2.4'
 gem 'aws-sdk', '~> 1.60.2' 
 gem 'paperclip', '~> 4.2.1'
 gem 'carrierwave'
