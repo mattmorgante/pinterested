@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'paperclip', '~> 4.2.1'
 gem 'carrierwave'
 gem 'fog', '~> 1.27.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -25,7 +25,7 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = current_user.pins.build(pin_params)
+    @pin = Pin.create(pin_params)
 
     respond_to do |format|
       if @pin.save
@@ -70,11 +70,11 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil
+      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
     end 
 end
