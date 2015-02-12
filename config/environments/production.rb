@@ -1,9 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  STDOUT.sync = true
+
+  logger = Logger.new(STDOUT)
+  logger.level = 0 # Must be numeric here - 0 :debug, 1 :info, 2 :warn, 3 :error, and 4 :fatal
+# NOTE:   with 0 you're going to get all DB calls, etc.
+
+  Rails.logger = Rails.application.config.logger = logger
+
     config.paperclip_defaults = { 
     :storage => :s3, 
     :s3_credentials => { 
-    :bucket => ENV['AWS_BUCKET'], 
+    :bucket => ENV['S3_BUCKET'], 
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] 
     } 
