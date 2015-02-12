@@ -28,9 +28,8 @@ class PinsController < ApplicationController
     @pin = Pin.new(pin_params)
 
     respond_to do |format|
-      byebug
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+        format.html { redirect_to @pin, notice: 'Pin was successfully created.'}
         format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new }
