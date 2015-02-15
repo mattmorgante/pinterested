@@ -2,7 +2,8 @@
     <% @pins.each do |pin| %>
     <div class = "box">
       <div class = "panel panel-default"> 
-        <%= link_to image_tag(pin.image.url(:medium)), pin %><br/>
+        <%= image_tag pin.avatar_url(:large).to_s %><br/>
+        <%= link_to "Download Attachment", pin.avatar_url %>
         <div class = "panel-body">
         <%= pin.description %><br/>
       </div>
