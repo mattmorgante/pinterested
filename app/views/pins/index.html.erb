@@ -1,18 +1,19 @@
-<div id ="pins" class ="transitions-enabled"> 
-    <% @pins.each do |pin| %>
-    <div class = "box">
-      <div class = "panel panel-default"> 
-        <%= image_tag pin.avatar_url(:large).to_s %><br/>
-        <%= link_to "Download Attachment", pin.avatar_url %>
-        <div class = "panel-body">
+<div id ="pins" class ="transitions-enabled">
+<% @pins.each do |pin| %>
+  <div class="box">
+    <div class="panel panel-default">
+      <%= link_to image_tag(pin.avatar.url(:preview)), pin %><br/>
+      <div class ="panel-body">
         <%= pin.description %><br/>
       </div>
-        <% if pin.user == current_user %>
-          <div class="panel-footer">
+      <div class ="panel-footer">
+      <% if pin.user == current_user %>
           <%= link_to 'Edit', edit_pin_path(pin) %><br/>
-          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %> 
-      </div>
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+      <% end %> 
     </div>
     <% end %>
+
+  </div> 
+</div>
 </div>
