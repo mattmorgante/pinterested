@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'jquery-turbolinks'
-gem 'masonry-rails', '~>0.2.4'
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
